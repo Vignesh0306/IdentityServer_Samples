@@ -44,12 +44,12 @@ namespace Client
             var response = await callClient.GetAsync("http://localhost:5001/Identity/GetUserInfo");
             if (!response.IsSuccessStatusCode)
             {
-                Console.WriteLine(response.StatusCode);
+                Console.WriteLine(response.StatusCode); 
                 return;
             }
             else
             {
-                var content = await response.Content.ReadAsStringAsync();
+                var content = await response.Content.ReadAsStringAsync(); //Get the Content from the API
                 Console.WriteLine(JArray.Parse(content));
             }
 
